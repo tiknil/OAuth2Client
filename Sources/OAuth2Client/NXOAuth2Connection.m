@@ -26,6 +26,7 @@
 @end
 
 NSString * const jsonContentType = @"application/json" ;
+NSString * const fileContentType = @"file" ;
 
 NSString * const NXOAuth2ConnectionDidStartNotification = @"NXOAuth2ConnectionDidStartNotification";
 NSString * const NXOAuth2ConnectionDidEndNotification = @"NXOAuth2ConnectionDidEndNotification";
@@ -254,6 +255,9 @@ sendingProgressHandler:(NXOAuth2ConnectionSendingProgressHandler)aSendingProgres
             {
                 [aRequest setHTTPBody:jsonData];
             }
+        }
+        else if([contentType isEqualToString:fileContentType]){
+            [aRequest setHTTPBody:parameters[@"file"]];
         }
         else if ([contentType isEqualToString:@"application/x-www-form-urlencoded"]) {
             

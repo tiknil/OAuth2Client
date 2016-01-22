@@ -41,6 +41,7 @@
 #endif
 
 FOUNDATION_EXPORT NSString * const jsonContentType;
+FOUNDATION_EXPORT NSString * const fileContentType;
 
 extern NSString * const NXOAuth2ConnectionDidStartNotification;
 extern NSString * const NXOAuth2ConnectionDidEndNotification;
